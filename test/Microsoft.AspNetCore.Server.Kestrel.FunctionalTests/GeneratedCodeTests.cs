@@ -29,8 +29,8 @@ namespace Microsoft.AspNetCore.Server.Kestrel.FunctionalTests
                 var testFrameHeadersGenerated = File.ReadAllText(testFrameHeadersGeneratedPath);
                 var testFrameGenerated = File.ReadAllText(testFrameGeneratedPath);
 
-                Assert.Equal(currentFrameHeadersGenerated, testFrameHeadersGenerated);
-                Assert.Equal(currentFrameGenerated, testFrameGenerated);
+                Assert.Equal(currentFrameHeadersGenerated, testFrameHeadersGenerated, ignoreLineEndingDifferences: true);
+                Assert.Equal(currentFrameGenerated, testFrameGenerated, ignoreLineEndingDifferences: true);
             }
             finally
             {
